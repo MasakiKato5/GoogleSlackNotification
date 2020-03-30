@@ -45,10 +45,10 @@ function postEventToSlack(slack_url, event) {
 
 //////////////////////////////////////////////////////////////////////////////
 
-function test(){
-  inf("START")
+function test_notify(){
+  logger.inf("START")
   //var events = fetchEventFromAddress()
   //postEventToSlack(url_api_de_asobu, "", events[0])
-  postSlack(url_api_de_asobu, "test")
-  inf("END")
+  postSlack(url_slack_hooks_notify, "test")
+  logger.inf("END")
 }

@@ -116,7 +116,7 @@ function onEventEdited(event_param) {
 
 }
 
-function setEventTriggersFromCalenders() {
+function setReminders() {
   "Main method: read calendar and set reminder"
   exec_and_notify(function(){
     // fetch events starting today
@@ -142,7 +142,7 @@ function setEventTriggersFromCalenders() {
       var event = all_events[i];
       setEventReminder(event, "remindEvent")
     }
-  })
+  });
 }
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -155,10 +155,5 @@ function test_main(){
     today.setHours(0, 0, 0, 0);
     var tomorrow = new Date(+today + 24*60*60*1000)
     logger.inf("today: " + today)
-    logger.inf("tomorrow:" + tomorrow)
-    //    var events = fetchEventFromAddress(cal_events)
-//    event_id = events[0].getId()
-//
-//    setEventReminder(events[0], "remindEvent")
   })
 }
