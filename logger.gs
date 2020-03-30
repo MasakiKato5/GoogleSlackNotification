@@ -12,6 +12,7 @@ var LogLevel = {
 var ConsoleLogger = function(){
   this.summary = ''
   this.history = ''
+  // TODO: apply log class
 
   this.tra = function(msg) {
     this.log(LogLevel["TRA"], msg)
@@ -34,13 +35,14 @@ var ConsoleLogger = function(){
   };
 
   this.log = function(level, msg) {
-    if(level < log_level)
+    if(level < log_level){
       return
+    }
     Logger.log(msg)
+
     now = new Date();
     now_str = Utilities.formatDate(now, 'Asia/Tokyo', 'HH:mm:ss')
     this.summary += now_str + ' : ' + msg + newline
-    this.history += now_str + ' : ' + msg + newline
   };
 
   this.add_summary = function(msg) {
